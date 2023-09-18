@@ -14,7 +14,10 @@
 
     <style>
       #editor {
-        width: 100%
+        width: 60%;
+        background-image: url("ABC.jpg") ;
+        background-repeat: no-repeat;
+        background-position: center;
       }
     </style>
 
@@ -62,7 +65,7 @@
 
     let randomNumber = Math.floor(Math.random() * countries.length);
 
-    questionElement.innerText = 'What is the capital of ' + countries[randomNumber] + '?';
+    questionElement.innerText = 'What is the capital of ... ' + countries[randomNumber] + '?';
 
     editorElement.addEventListener('changed', (event) => {
       undoElement.disabled = !event.detail.canUndo;
@@ -104,7 +107,7 @@
       countries.splice(randomNumber, 1);
       capitals.splice(randomNumber, 1);
       randomNumber = Math.floor(Math.random() * countries.length);
-      questionElement.innerHTML = countries[randomNumber] ? 'What is the capital of (roger added)' + countries[randomNumber] + ' ?' : 'You won !';
+      questionElement.innerHTML = countries[randomNumber] ? 'What is the capital of ___' + countries[randomNumber] + ' ?' : 'You won !';
       nextDivElement.innerHTML = '';
       editorElement.editor.clear();
       resultElement.innerHTML = '';
